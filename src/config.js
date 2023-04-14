@@ -4,20 +4,20 @@ import { config } from "dotenv";
 config(); 
 
 //Definición de variables
-const PORT = process.env.PORT || 3000;
-const DB_HOST = process.env.DB_HOST || 'localhost';
- const DB_PORT = process.env.DB_PORT || 3306;
- const DB_NAME = process.env.DB_NAME || 'records';
- const DB_USER = process.env.DB_USER || 'root';
- const DB_PASSWORD = process.env.DB_PASSWORD || '1234';
+//const PORT = process.env.PORT || 3000;
+//const DB_HOST = process.env.DB_HOST || 'localhost';
+//const DB_PORT = process.env.DB_PORT || 3306;
+//const DB_NAME = process.env.DB_NAME || 'records';
+//const DB_USER = process.env.DB_USER || 'root';
+//const DB_PASSWORD = process.env.DB_PASSWORD || '1234';
 
 
-//raylway
-//const DB_HOST = process.env.DB_HOST;
-//const DB_PORT = process.env.DB_PORT;
-//const DB_NAME = process.env.DB_NAME;
-//const DB_USER = process.env.DB_USER;
-//const DB_PASSWORD = process.env.DB_PASSWORD;
+//railway
+const DB_HOST = process.env.DB_HOST;
+const DB_PORT = process.env.DB_PORT;
+const DB_NAME = process.env.DB_NAME;
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
 
 //Exportación de variables a connection.js e Index.js
 export {
