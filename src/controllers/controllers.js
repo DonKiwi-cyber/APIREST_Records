@@ -8,8 +8,7 @@ const getRecords = async (req, res) =>
             res.send(rows); // Envío de records JSON
         } catch(error) {
             console.log(error);
-            return res.status(500).json({ message: "algo salió mal" })
-            .send(error); // Mensaje de error
+            return res.status(500).json({ message: "algo salió mal" }); // Mensaje de error
         }
     };
 
