@@ -16,16 +16,16 @@ const getRecords = async (req, res) =>
 const postRecords = async (req, res) => 
     {
         try{
-            const {inicio, fin, movimientos} = req.body; // Rescata 3 objetos del cuerpo de los valores JSON introducidos
+            const {tiempo, movimientos} = req.body; // Rescata 3 objetos del cuerpo de los valores JSON introducidos
             const [rows] =  await pool.query(
-                'INSERT INTO tiempos(Inicio, Fin, Tiempo, No_movimientos) VALUES (?, ?, TIMEDIFF(Fin, Inicio), ?)', [inicio, fin, movimientos]); //Query MySQL
+                'INSERT INTO tiempos(Tiempo, No_movimientos) VALUES (?, ?)', [tiempo, movimientos]); //Query MySQL
             res.send({
                 id: rows.insertId, // Envío del atributo insertID dentro de rows
-                inicio,                
-                fin,
+                tiempo,
                 movimientos,
             }); // Mensaje enviado a la app
         } catch (error){
+            console.log(error)
             return res.status(500).json({ message: "algo salió mal" }); // Mensaje de error
         }
     };
